@@ -11,6 +11,7 @@ test = round(rnorm(50, 19, 4))
 df <- data.frame(Age = x,
                  Height = y)
 
+plot(x, y)
 
 ## Run a linear regression model 
 
@@ -36,4 +37,7 @@ top_prediction <- head(predict(model,
 (predict_table <- data.frame(Age = head(test, 10),
                              Height_predicted = top_prediction))
 
+
+plot(df$Age, df$Height, main="Scatter Plot with Fitted Line", xlab="Age", ylab="Height")
+abline(model, col="red", lwd=2)
   
